@@ -1,8 +1,14 @@
-CAProfiler - a tool for analysis of installed smartcard applets (and some basic SIM/EMV functionality)
+CAProfiler - a C++ tool for scan of installed smartcard applets 
 =======
 [![Latest release](https://img.shields.io/github/release/petrs/CAProfiler.svg)](https://github.com/petrs/CAProfiler/releases/latest)
-
 [![Build status](https://ci.appveyor.com/api/projects/status/4a953152ftvd044a?svg=true)](https://ci.appveyor.com/project/petrs/CAProfiler)
+
+The applications installed on smartcard are identified by its unique Application ID (AID). The list of installed applications can be directly retrieved via [GlobalPlatform API](https://globalplatform.org/) using a suitable tool, e.g., amazing [GlobalPlatformPro tool](https://github.com/martinpaljak/GlobalPlatformPro) by Martin Paljak. However, the command requires successful authentication against so-called CardManager (CM) application using cryptographic keys. While the required keys are set to well-known values for developer cards, production cards are usually locked with keys known only to given card issuer. As a result, a list of installed applications cannot be readily retrieved.
+
+The CAProfiler tool iterates over a large number of known AIDs from standards (e.g., EMV or OpenPGP application), try to SELECT the application for use and detects response status. The successful SELECT command signalize installed application.
+
+## Important notes
+The codebase for this project was developed already around 2007, is written in C++ and uses Microsoft proprietary extensions (MFC). I do plan to rewrite utility to Java (for better portability) and a separate list of known AIDs together with human-readable names into the separate configuration file (for easier addition of new AIDs).
 
 ##  Usage
 If run without command line parameters, interactive menu selection is displayed.
@@ -68,3 +74,4 @@ CAProfiler.exe /OPER:"2" /APPLET_AID:"a0000000043060" /PIN:"1234" /CHALLENGE:"11
 ```
 CAProfiler.exe /OPER:"3" /CHALLENGE:"0102030405060708090a0b0c0d0e0f10" /PIN:"1234"
 ```
+
