@@ -1,4 +1,4 @@
-CAProfiler - a C++ tool for scan of installed smartcard applets 
+CAProfiler - C++ tool to scan installed smartcard applets 
 =======
 [![Latest release](https://img.shields.io/github/release/petrs/CAProfiler.svg)](https://github.com/petrs/CAProfiler/releases/latest)
 [![Build status](https://ci.appveyor.com/api/projects/status/4a953152ftvd044a?svg=true)](https://ci.appveyor.com/project/petrs/CAProfiler)
