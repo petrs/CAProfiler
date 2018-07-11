@@ -68,7 +68,7 @@ build:
 #       artifacts                 #
 #---------------------------------#
 artifacts:
-- path: c:\projects\CAProfiler\x64\Release\CAProfiler.exe
+- path: \x64\Release\CAProfiler.exe
   name: CAProfiler 64bit
-- path: c:\projects\CAProfiler\Release\winscard.dll
+- path: \Release\CAProfiler.exe
   name: CAProfiler 32bit
